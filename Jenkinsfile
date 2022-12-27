@@ -1,28 +1,32 @@
 pipeline {
-    agent any
-
-    tools {
-        
-        maven "M3"
-    }
+    agent { label 'maven-label' }
 
     stages {
-        stage('Build') {
+        stage('prepare') {
             steps {
-               
-                git 'https://github.com/jglick/simple-maven-project-with-tests.git'
-
-                
-                sh "mvn -Dmaven.test.failure.ignore=true clean package"
-
+                git branch: 'main', url: 'https://github.com/quick-abc/maven-sync.git'
             }
-
-            post {
-               
-                success {
-                    junit '**/target/surefire-reports/TEST-*.xml'
-                    archiveArtifacts 'target/*.jar'
-                }
+        }
+        stage('build') {
+            steps {
+                sh 'mvn clean install'
+            }
+        }
+        stage('deploy-dev') {
+            steps {
+                echo "deploying an appln in devo"
+            }
+        }
+         stage('deploy-stage') {
+            steps {
+                input 'give an approval'
+                echo "deploying an appln in stage"
+            }
+        }
+        stage('deploy-prod') {
+            steps {
+                input 'give an approval'
+                echo "deploying an appln in prod"
             }
         }
     }
