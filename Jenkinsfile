@@ -18,7 +18,8 @@ pipeline {
         }
         stage('build') {
             steps {
-                sh 'mvn clean deploy'
+                //sh 'mvn clean deploy'
+                sh 'mvn clean deploy org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=quick-abc_sync'
             }
         }
         stage('deploy-dev') {
