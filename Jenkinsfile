@@ -2,6 +2,11 @@ pipeline {
     agent { label 'maven-label' }
 
     stages {
+        stage('build') {
+            steps {
+                sayhello "Ravi"
+            }
+        }
         stage('prepare') {
             steps {
                 git branch: 'main', url: 'https://github.com/quick-abc/maven-sync.git'
