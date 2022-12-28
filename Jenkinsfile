@@ -8,7 +8,7 @@ pipeline {
     stages {
         stage('greet') {
             steps {
-                sayhello "Ravi"
+                sayHello "Ravi"
             }
         }
         stage('prepare') {
