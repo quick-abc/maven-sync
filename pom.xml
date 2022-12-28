@@ -24,14 +24,14 @@
       <uniqueVersion>false</uniqueVersion>
       <id>sync-releases</id>
       <name>sync-releases</name>
-      <url>http://13.235.27.122:8081/repository/sync-releases/</url>
+      <url>http://172.31.44.128:8081/repository/sync-releases/</url>
       <layout>default</layout>
     </repository>
     <snapshotRepository>
       <uniqueVersion>true</uniqueVersion>
       <id>sync-snapshots</id>
       <name>sync-snapshots</name>
-      <url>http://13.235.27.122:8081/repository/sync-snapshots/</url>
+      <url>http://172.31.44.128:8081/repository/sync-snapshots/</url>
       <layout>legacy</layout>
     </snapshotRepository>
   </distributionManagement>
