@@ -2,7 +2,7 @@ pipeline {
     agent { label 'maven-label' }
 
     stages {
-        stage('build') {
+        stage('greet') {
             steps {
                 sayhello "Ravi"
             }
