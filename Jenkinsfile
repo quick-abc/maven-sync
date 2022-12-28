@@ -1,3 +1,6 @@
+def sayhello(String name){
+   echo "Hello, ${name}."
+}
 pipeline {
     agent { label 'maven-label' }
 
