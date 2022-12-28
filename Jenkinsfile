@@ -20,7 +20,7 @@ pipeline {
             steps {
                 //sh 'mvn clean deploy'
                 withCredentials([string(credentialsId: 'SONAR_TOKEN', variable: '')]) {
-                    sh 'mvn clean deploy org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=maven-sync'
+                    sh 'mvn verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=maven-sync'
                 }
             }
         }
