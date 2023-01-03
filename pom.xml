@@ -33,7 +33,7 @@
       <uniqueVersion>true</uniqueVersion>
       <id>sync-snapshot</id>
       <name>sync-snapshot</name>
-      <url>http://65.0.176.59:8081/repository/sync-snapshot/url>
+      <url>http://65.0.176.59:8081/repository/sync-snapshot</url>
       <layout>legacy</layout>
     </snapshotRepository>
   </distributionManagement>
