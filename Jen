@@ -22,6 +22,7 @@ pipeline{
     
       stage("test"){
         steps{
+        input 'approve'
         echo "test"
         
         }
@@ -29,6 +30,7 @@ pipeline{
       
         stage("deploy"){
         steps{
+        input 'approve'
         echo "deploy"
         
         }
